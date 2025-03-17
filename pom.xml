@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+?xml version="1.0" encoding="UTF-8"?>
 <project  xmlns="http://maven.apache.org/POM/4.0.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
@@ -29,11 +29,54 @@
     </repositories>
 
     <properties>
+		<jdk.version>1.8</jdk.version>
+		<spring.version>5.1.2.RELEASE</spring.version>
+		<junit.version>4.11</junit.version>
+		<log4j.version>1.2.17</log4j.version>
+		<sonar.host.url>http://13.127.250.47:9000/</sonar.host.url>
+		<sonar.login>admin</sonar.login>
+		<sonar.password>pass</sonar.password> 
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    </properties>
+
+    <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <repositories>
+    <repository>
+        <id>nexus</id>
+        <url>http://3.110.119.48:8081/repository/maven-public/</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+    </repositories>
+
+    <distributionManagement>
+    <repository>
+        <id>nexus-releases</id>
+        <url>http://3.110.119.48:8081/repository/DevOps-releases/</url>
+    </repository>
+    <snapshotRepository>
+        <id>nexus-snapshots</id>
+        <url>http://3.110.119.48:8081/repository/DevOps-snapshots/</url>
+    </snapshotRepository>
+   </distributionManagement>
+
+
+
     <build>
         <finalName>DevOps</finalName>
     </build>
 </project>
+	
+
+	
